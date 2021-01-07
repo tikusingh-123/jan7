@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Convert JSON Data to HTML Table</title>
+    <script>
+   
+    // json
+         
+        // CREATE DYNAMIC TABLE.
+function CreateTableFromJSON()
+{   
+  var myBooks = [
+                {
+                    "BookID": "1",
+                    "BookName": "Computer Architecture",
+                    "Category": "Computers",
+                    "Price": "125.60"
+                },
+                {
+                    "BookID": "2",
+                    "BookName": "Asp.Net 4 Blue Book",
+                    "Category": "Programming",
+                    "Price": "56.00"
+                },
+                {
+                    "BookID": "3",
+                    "BookName": "Popular Science",
+                    "Category": "Science",
+                    "Price": "210.40"
+                },
+
+                {
+                    "BookID": "3",
+                    "BookName": "Popular Science",
+                    "Category": "Science",
+                    "Price": "210.40"
+                }
+
+                ,
+
+                {
+                    "BookID": "3",
+                    "BookName": "Popular Science",
+                    "Category": "Science",
+                    "Price": "210.40"
+                }
+        ]
+        var tableBody = '<table width="100%" cellpadding="3" align="center" style="font-size:12px;border-collapse:collapse;" border="1"><tr style="font-weight:bold;background:#16A1E7;"><td style="color:white;">Bookid</td><td style="color:white;">Book Name</td><td style="color:white;">Category</td><td style="color:white;">Price</td></tr>';
+           
+        myBooks.forEach(function(d)
+        {
+            tableBody += '<tr><td>'+d.BookID+'</td><td>'+d.BookName+'</td><td>'+d.Category+'</td><td>'+d.Price+'</td></tr>';   
+        });
+            tableBody += '<table>';
+    
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+          
+           var divContainer = document.getElementById("showData");
+              divContainer.innerHTML = tableBody;
+              }
+    </script>
+   
+</head>
+<body>
+    <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
+    <p id="showData"></p>
+</body>
+ </html>
